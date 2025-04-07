@@ -5,7 +5,7 @@
     "jsxImportSource": "hono/jsx",
     "module": "NodeNext",
     "paths": {
-      "@/*": ["./src/* "]
+      "@/*": ["./src/*"]
     },
     "types": [
       "node"
