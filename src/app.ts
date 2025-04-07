@@ -6,8 +6,8 @@ import configureOpenAPI from "./lib/configure-open-api.js";
 
 const app = createApp();
 const routes = [
-    index,
-    tasks
+  index,
+  tasks,
 ];
 configureOpenAPI(app);
 
