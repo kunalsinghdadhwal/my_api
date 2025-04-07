@@ -1,15 +1,18 @@
-import createApp from "@/lib/create-app.js";
+import createApp from "@/lib/create-app";
+import index from "@/routes/index.route";
+import tasks from "@/routes/tasks/tasks.index";
+
 import configureOpenAPI from "./lib/configure-open-api.js";
-import  index from "@/routes/index.route.js";
 
 const app = createApp();
 const routes = [
-    index
-]
+    index,
+    tasks
+];
 configureOpenAPI(app);
 
 routes.forEach((route) => {
-    app.route("/", route);
+  app.route("/", route);
 });
 
 export default app;
