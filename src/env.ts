@@ -13,7 +13,7 @@ const EnvSchema = z.object({
   DATABASE_URL: z.string().url(),
   DATABASE_AUTH_TOKEN: z.string().optional(),
 }).refine((input) => {
-  if(input.NODE_ENV === "production") {
+  if (input.NODE_ENV === "production") {
     return !!input.DATABASE_AUTH_TOKEN;
   }
   return true;
