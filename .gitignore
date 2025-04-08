@@ -8,6 +8,8 @@
 .idea/usage.statistics.xml
 .idea/shelf
 pnpm-lock.yaml
+dev.db
+
 
 # deps
 node_modules/

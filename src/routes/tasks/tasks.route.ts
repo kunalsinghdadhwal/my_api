@@ -3,7 +3,7 @@ import * as HttpStatus from "stoker/http-status-codes";
 import { jsonContent } from "stoker/openapi/helpers";
 import { z } from "zod";
 
-const list = createRoute({
+export const list = createRoute({
   path: "/tasks",
   method: "get",
   tags: ["Tasks"],
