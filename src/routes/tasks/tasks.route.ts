@@ -4,7 +4,8 @@ import { jsonContent, jsonContentRequired } from "stoker/openapi/helpers";
 import { createErrorSchema, IdParamsSchema } from "stoker/openapi/schemas";
 import { z } from "zod";
 
-import { insertTasksSchema, selectTasksSchema } from "@/db/schema.js";
+import { insertTasksSchema, patchTasksSchema, selectTasksSchema } from "@/db/schema.js";
+import { notFoundSchema } from "@/lib/constants.js";
 
 export const list = createRoute({
   path: "/tasks",
@@ -46,7 +47,7 @@ export const getOne = createRoute({
   request: {
     params: IdParamsSchema,
   },
-  tags: ["tasks"],
+  tags: ["Tasks"],
   responses: {
     [HttpStatusCodes.OK]: jsonContent(
       selectTasksSchema,
@@ -66,12 +67,18 @@ export const getOne = createRoute({
 export const patch = createRoute({
   path: "/tasks/{id}",
   method: "patch",
-  tags: ["tasks"],
+  tags: ["Tasks"],
   request: {
     params: IdParamsSchema,
     body: jsonContentRequired(
       patchTasksSchema,
       "The Task to update",
+    ),
+  },
+  responses: {
+    [HttpStatusCodes.OK]: jsonContent(
+      selectTasksSchema,
+      "The updated Task",
     ),
     [HttpStatusCodes.NOT_FOUND]: jsonContent(
       notFoundSchema,
@@ -90,7 +97,7 @@ export const remove = createRoute({
   request: {
     params: IdParamsSchema,
   },
-  tags,
+  tags: ["Tasks"],
   responses: {
     [HttpStatusCodes.NO_CONTENT]: {
       description: "Task deleted",
