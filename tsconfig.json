@@ -3,15 +3,24 @@
     "target": "ESNext",
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
-    "module": "NodeNext",
+    "lib": [
+      "ESNext"
+    ],
+    "baseUrl": "./",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "paths": {
       "@/*": ["./src/*"]
     },
+    "typeRoots": ["./node_modules/@types"],
     "types": [
-      "node"
+      "@cloudflare/workers-types"
     ],
     "strict": true,
-    "verbatimModuleSyntax": true,
+    "outDir": "./dist",
     "skipLibCheck": true
+  },
+  "tsc-alias": {
+    "resolveFullPaths": true
   }
 }

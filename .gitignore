@@ -9,6 +9,7 @@
 .idea/shelf
 pnpm-lock.yaml
 dev.db
+.dev.vars
 
 
 # deps
