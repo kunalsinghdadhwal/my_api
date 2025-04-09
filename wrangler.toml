@@ -1,4 +1,4 @@
-name = "kunal-api"
+name = "myapi"
 main = "src/app.ts"
 compatibility_date = "2025-03-10"
 compatibility_flags = [ "nodejs_compat" ]
