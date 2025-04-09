@@ -1,4 +1,4 @@
-name = "hono-starter-cloudflare"
+name = "kunal-api"
 main = "src/app.ts"
 compatibility_date = "2025-03-10"
 compatibility_flags = [ "nodejs_compat" ]
