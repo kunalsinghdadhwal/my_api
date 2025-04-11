@@ -16,5 +16,5 @@ export function pinoLogger() {
     http: {
       reqId: () => randomUUID(),
     },
-  })(c as unknown as Context<Env>, next)) satisfies MiddlewareHandler<AppBindings>;
+  })(c as Context<Env>, next)) satisfies MiddlewareHandler<AppBindings>;
 }

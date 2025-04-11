@@ -1,20 +1,25 @@
-import { Scalar } from "@scalar/hono-api-reference";
+import { apiReference } from "@scalar/hono-api-reference";
 
-import type { AppOpenAPI } from "./types.js";
+import type { AppOpenAPI } from "./types";
 
-import packageJson from "../../package.json";
+import packageJSON from "../../package.json";
 
 export default function configureOpenAPI(app: AppOpenAPI) {
   app.doc("/doc", {
     openapi: "3.0.0",
     info: {
+      version: packageJSON.version,
       title: "Tasks API",
-      version: packageJson.version,
     },
   });
 
-  app.get("/reference", Scalar({
-    theme: "saturn",
-    url: "/doc",
-  }));
+  app.get(
+    "/reference",
+    apiReference({
+      theme: "saturn",
+      spec: {
+        url: "/doc",
+      },
+    }),
+  );
 }
