@@ -8,7 +8,7 @@ export default function configureOpenAPI(app) {
             title: "Tasks API",
         },
     });
-    app.get("/reference", apiReference({
+    app.get("/", apiReference({
         theme: "saturn",
         spec: {
             url: "/doc",
