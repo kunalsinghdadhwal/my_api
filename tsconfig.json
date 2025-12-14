@@ -3,19 +3,17 @@
     "target": "ESNext",
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx",
-    "lib": [
-      "ESNext"
-    ],
+   "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "lib": ["ESNext"],
     "baseUrl": "./",
     "module": "ESNext",
     "moduleResolution": "Node",
     "paths": {
       "@/*": ["./src/*"]
     },
-    "typeRoots": ["./node_modules/@types"],
-    "types": [
-      "@cloudflare/workers-types"
-    ],
+    "types": ["@cloudflare/workers-types"],
     "strict": true,
     "outDir": "./dist",
     "skipLibCheck": true

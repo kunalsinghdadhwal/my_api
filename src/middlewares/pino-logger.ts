@@ -11,8 +11,8 @@ import type { AppBindings } from "@/lib/types";
 export function pinoLogger() {
   return ((c, next) => logger({
     pino: pino({
-      level: c.env.LOG_LEVEL || "info",
-    }, c.env.NODE_ENV === "production" ? undefined : pretty()),
+      level: c.env?.LOG_LEVEL || "info",
+    }, c.env?.NODE_ENV === "production" ? undefined : pretty()),
     http: {
       reqId: () => randomUUID(),
     },
