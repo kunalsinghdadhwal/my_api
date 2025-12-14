@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "wrangler dev",
+    "dev": "tsx watch src/index.ts",
+    "dev:wrangler": "wrangler dev",
     "deploy": "wrangler deploy --minify",
     "start": "node ./dist/src/index.js",
     "dev:db": "turso dev --db-file dev.db",
@@ -12,7 +13,10 @@
     "lint": "eslint .",
     "lint:fix": "npm run lint --fix",
     "test": "cross-env NODE_ENV=test vitest",
-    "build": "tsc && tsc-alias"
+    "build": "tsc && tsc-alias",
+    "db:generate": "drizzle-kit generate",
+    "db:push": "drizzle-kit push",
+    "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.1",
